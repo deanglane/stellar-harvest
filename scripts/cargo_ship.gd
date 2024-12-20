@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var cargo_ship: Sprite2D = $Sprite2D
+@onready var meteorite_rock: Area2D = $"../Meteorite-rock"
+
 
 const SPEED: float = 350.0
 var speed2: float = SPEED
@@ -30,11 +32,11 @@ func _process(delta: float) -> void:
 		# stopping cargo from going off the screen
 		if position.x + 50 > get_viewport_rect().size.x:
 			print("Right Stop")
-			
-			
-		
-		
 
-		
-		
+func _on_area_entered(area: Area2D) -> void:
+	print("something hit the ship")
+	meteorite_rock.queue_free()
+	var score = 0
+	score += 1
+	print(score)
 	
