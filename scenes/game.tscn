@@ -1,25 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://gqextbw6m8if"]
+[gd_scene load_steps=5 format=3 uid="uid://gqextbw6m8if"]
 
 [ext_resource type="Texture2D" uid="uid://thu4b4wq0lfq" path="res://assets/sprites/spaceBG-placeholder.png" id="1_hyqvi"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_kl4rw"]
+[ext_resource type="PackedScene" uid="uid://cjdptjhsovsy5" path="res://scenes/meteorite_rock.tscn" id="2_7qd7i"]
 [ext_resource type="PackedScene" uid="uid://cit3g78sgthb" path="res://scenes/cargo_ship.tscn" id="2_x2aa6"]
-[ext_resource type="PackedScene" uid="uid://cjdptjhsovsy5" path="res://scenes/meteorite_rock.tscn" id="3_yj0ni"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_kl4rw")
+meteorite_rock_scene = ExtResource("2_7qd7i")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(574, 328)
 scale = Vector2(1.25089, 1.25089)
 texture = ExtResource("1_hyqvi")
 
-[node name="Meteorite-rock" parent="." instance=ExtResource("3_yj0ni")]
-position = Vector2(579, 276)
-
 [node name="Cargo-Ship" parent="." instance=ExtResource("2_x2aa6")]
 position = Vector2(573, 598)
 scale = Vector2(1.71809, 1.71809)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
-[node name="Meteorite-rock2" parent="." instance=ExtResource("3_yj0ni")]
-position = Vector2(576, 184)
+[connection signal="area_entered" from="Cargo-Ship" to="." method="_on_cargo_ship_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

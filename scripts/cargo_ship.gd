@@ -33,10 +33,5 @@ func _process(delta: float) -> void:
 		if position.x + 50 > get_viewport_rect().size.x:
 			print("Right Stop")
 
-func _on_area_entered(area: Area2D) -> void:
-	print("something hit the ship")
-	meteorite_rock.queue_free()
-	var score = 0
-	score += 1
-	print(score)
+
 	

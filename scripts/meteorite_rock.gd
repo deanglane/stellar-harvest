@@ -1,6 +1,9 @@
 extends Area2D
 
+class_name meteorite
+
 var speed = 100
+signal meteorite_off_screen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +14,5 @@ func _process(delta: float) -> void:
 	position.y += speed * delta
 	if position.y > get_viewport_rect().size.y:
 		queue_free()
-	
-	# get a random position on the Y viewport off screen
-	# have sprite spawn at that location instantiate add child?
-	# Use a timer node to have it spawn ever second
-	
+		meteorite_off_screen.emit()
+		
