@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjdptjhsovsy5"]
+
+[ext_resource type="Script" path="res://scripts/meteorite_rock.gd" id="1_0fevj"]
+[ext_resource type="Texture2D" uid="uid://cis5gr8xij6xg" path="res://assets/sprites/meteorite-all-placeholder-Sheet.png" id="1_ijsf7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jglk0"]
+radius = 21.0
+
+[node name="Meteorite-rock" type="Area2D"]
+script = ExtResource("1_0fevj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ijsf7")
+region_enabled = true
+region_rect = Rect2(0, 0, 67.7778, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_jglk0")
