@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://gqextbw6m8if"]
+[gd_scene load_steps=3 format=3 uid="uid://gqextbw6m8if"]
+
+[ext_resource type="Texture2D" uid="uid://thu4b4wq0lfq" path="res://assets/sprites/spaceBG-placeholder.png" id="1_hyqvi"]
+[ext_resource type="PackedScene" uid="uid://cit3g78sgthb" path="res://scenes/cargo_ship.tscn" id="2_x2aa6"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 328)
+scale = Vector2(1.25089, 1.25089)
+texture = ExtResource("1_hyqvi")
+
+[node name="Cargo-Ship" parent="." instance=ExtResource("2_x2aa6")]
+position = Vector2(573, 598)
+scale = Vector2(1.71809, 1.71809)

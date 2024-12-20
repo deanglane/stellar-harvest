@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cit3g78sgthb"]
+
+[ext_resource type="Texture2D" uid="uid://c381puycpfkuf" path="res://assets/sprites/space-ship-placeholder.png" id="1_d1mwx"]
+[ext_resource type="Script" path="res://scenes/cargo_ship.gd" id="1_tgwql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxih8"]
+size = Vector2(39, 9)
+
+[node name="Cargo-Ship" type="Area2D"]
+script = ExtResource("1_tgwql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d1mwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_qxih8")
