@@ -9,6 +9,7 @@ extends Node2D
 var spawn_rate_min:float = 2
 var spawn_rate_max:float = 4
 var player_score: int = 0
+var player_lives: Array = [$Lives/Life]
 
 func _ready() -> void:
 	print("Game Started")
@@ -29,9 +30,13 @@ func spawn_rock() -> void:
 		
 		# function to fire when signal is emitted from the new_rock
 		new_rock.meteorite_off_screen.connect(game_over)
+		new_rock.meteorite_off_screen.connect(fail)
 		
 		# adding the new_rock to the main game scene
 		add_child(new_rock)
+
+func fail() -> void:
+	player_lives.pop_back()
 
 # function to handle game over
 func game_over() -> void:

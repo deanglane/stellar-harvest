@@ -37,5 +37,7 @@ theme_override_colors/font_color = Color(0.766133, 0.520401, 0.166188, 1)
 theme_override_font_sizes/font_size = 30
 text = "Score: $0"
 
+[node name="Lives" type="Node2D" parent="."]
+
 [connection signal="area_entered" from="Cargo-Ship" to="." method="_on_cargo_ship_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
