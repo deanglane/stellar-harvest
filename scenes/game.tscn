@@ -1,23 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://gqextbw6m8if"]
+[gd_scene load_steps=7 format=3 uid="uid://gqextbw6m8if"]
 
 [ext_resource type="Texture2D" uid="uid://thu4b4wq0lfq" path="res://assets/sprites/spaceBG-placeholder.png" id="1_hyqvi"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_kl4rw"]
 [ext_resource type="PackedScene" uid="uid://cjdptjhsovsy5" path="res://scenes/meteorite_rock.tscn" id="2_7qd7i"]
 [ext_resource type="PackedScene" uid="uid://cit3g78sgthb" path="res://scenes/cargo_ship.tscn" id="2_x2aa6"]
 [ext_resource type="AudioStream" uid="uid://cegd211ebqkhe" path="res://assets/music-sfx/game-score.wav" id="5_bi1u3"]
+[ext_resource type="Texture2D" uid="uid://d1ahy2htiqnpi" path="res://assets/sprites/stills/life.png" id="6_i3j1x"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kl4rw")
 meteorite_rock_scene = ExtResource("2_7qd7i")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(575, 326)
-scale = Vector2(1.25089, 1.25089)
+position = Vector2(611, 391)
+scale = Vector2(1.67542, 1.67542)
 texture = ExtResource("1_hyqvi")
 
+[node name="Life" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(1072, 80)
+scale = Vector2(0.616437, 0.616437)
+texture = ExtResource("6_i3j1x")
+
+[node name="Life2" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(1016, 80)
+scale = Vector2(0.616437, 0.616437)
+texture = ExtResource("6_i3j1x")
+
+[node name="Life3" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(960, 80)
+scale = Vector2(0.616437, 0.616437)
+texture = ExtResource("6_i3j1x")
+
 [node name="Cargo-Ship" parent="." instance=ExtResource("2_x2aa6")]
-position = Vector2(573, 598)
-scale = Vector2(1.71809, 1.71809)
+z_index = 10
+position = Vector2(520, 592)
+scale = Vector2(1.26281, 1.26281)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

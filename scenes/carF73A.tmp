@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvujpnfkf5qw0" path="res://assets/sprites/animations/mining-ship-ani-sheet.png" id="3_xixed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxih8"]
-size = Vector2(105, 9)
+size = Vector2(65, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pog6y"]
 atlas = ExtResource("3_xixed")
@@ -110,9 +110,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_87j8x")
 }],
-"loop": false,
+"loop": true,
 "name": &"ship-closed",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -130,9 +130,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ovyb")
 }],
-"loop": false,
+"loop": true,
 "name": &"ship-open",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -155,12 +155,9 @@ animations = [{
 script = ExtResource("1_tgwql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, 7.5)
+position = Vector2(-1.5, 1.5)
 shape = SubResource("RectangleShape2D_qxih8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3h3se")
-animation = &"ship-closed"
-autoplay = "idle-closed"
-frame = 4
-frame_progress = 1.0
+animation = &"ship-open"
