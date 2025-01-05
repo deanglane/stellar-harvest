@@ -2,6 +2,7 @@ extends Area2D
 
 #@onready var meteorite_rock: Area2D = $"../Meteorite-rock"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 const SPEED: float = 350.0
 var speed2: float = SPEED
@@ -25,6 +26,11 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 		# stopping cargo from going off the screen
 		
+		# audio for thrusters
+		if not audio_stream_player_2d.playing:
+			audio_stream_player_2d.play()
+			
+		
 	# Movement inputs right
 	elif Input.is_action_pressed("right"):
 		# cargo left speed
@@ -32,6 +38,12 @@ func _process(delta: float) -> void:
 		# cargo sprite directions
 		animated_sprite_2d.flip_h = true
 		# stopping cargo from going off the screen
+		
+		# audio for thrusters
+		if not audio_stream_player_2d.playing:
+			audio_stream_player_2d.play()
+	else:
+		audio_stream_player_2d.stop()
 	
 	if is_cargo_open == false:
 		if direction == 0:

@@ -13,25 +13,25 @@ script = ExtResource("1_kl4rw")
 meteorite_rock_scene = ExtResource("2_7qd7i")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(611, 391)
-scale = Vector2(1.67542, 1.67542)
+position = Vector2(584, 312)
+scale = Vector2(1.24486, 1.24486)
 texture = ExtResource("1_hyqvi")
 
 [node name="Life" type="Sprite2D" parent="."]
 z_index = 1000
-position = Vector2(1072, 80)
+position = Vector2(1116, 36)
 scale = Vector2(0.616437, 0.616437)
 texture = ExtResource("6_i3j1x")
 
 [node name="Life2" type="Sprite2D" parent="."]
 z_index = 1000
-position = Vector2(1016, 80)
+position = Vector2(1060, 36)
 scale = Vector2(0.616437, 0.616437)
 texture = ExtResource("6_i3j1x")
 
 [node name="Life3" type="Sprite2D" parent="."]
 z_index = 1000
-position = Vector2(960, 80)
+position = Vector2(1004, 36)
 scale = Vector2(0.616437, 0.616437)
 texture = ExtResource("6_i3j1x")
 
@@ -58,10 +58,11 @@ bus = &"BG Music"
 bus = &"COLLECT"
 
 [node name="Score" type="Label" parent="."]
-offset_left = 17.0
-offset_top = 12.0
-offset_right = 87.0
-offset_bottom = 35.0
+z_index = 100
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 194.0
+offset_bottom = 66.0
 theme_override_colors/font_color = Color(0.766133, 0.520401, 0.166188, 1)
 theme_override_font_sizes/font_size = 30
 text = "Score: $0"

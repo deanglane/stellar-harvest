@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cit3g78sgthb"]
+[gd_scene load_steps=22 format=3 uid="uid://cit3g78sgthb"]
 
 [ext_resource type="Script" path="res://scripts/cargo_ship.gd" id="1_tgwql"]
+[ext_resource type="AudioStream" uid="uid://dmqmkg50t2vyt" path="res://assets/music-sfx/01-sfx/thrust.wav" id="3_2h3qe"]
 [ext_resource type="Texture2D" uid="uid://cvujpnfkf5qw0" path="res://assets/sprites/animations/mining-ship-ani-sheet.png" id="3_xixed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxih8"]
@@ -164,3 +165,7 @@ animation = &"ship-closed"
 autoplay = "idle-closed"
 frame = 4
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2h3qe")
+bus = &"Thrusters"
