@@ -1,0 +1,163 @@
+[gd_scene load_steps=21 format=3 uid="uid://cit3g78sgthb"]
+
+[ext_resource type="Script" path="res://scripts/cargo_ship.gd" id="1_tgwql"]
+[ext_resource type="Texture2D" uid="uid://cvujpnfkf5qw0" path="res://assets/sprites/animations/mining-ship-ani-sheet.png" id="3_xixed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxih8"]
+size = Vector2(65, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pog6y"]
+atlas = ExtResource("3_xixed")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj6af"]
+atlas = ExtResource("3_xixed")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xpa6"]
+atlas = ExtResource("3_xixed")
+region = Rect2(0, 320, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebvmc"]
+atlas = ExtResource("3_xixed")
+region = Rect2(128, 320, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkd68"]
+atlas = ExtResource("3_xixed")
+region = Rect2(0, 256, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1emh"]
+atlas = ExtResource("3_xixed")
+region = Rect2(128, 256, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4rco"]
+atlas = ExtResource("3_xixed")
+region = Rect2(256, 256, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekw4k"]
+atlas = ExtResource("3_xixed")
+region = Rect2(384, 256, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87j8x"]
+atlas = ExtResource("3_xixed")
+region = Rect2(512, 256, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scevv"]
+atlas = ExtResource("3_xixed")
+region = Rect2(0, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvh43"]
+atlas = ExtResource("3_xixed")
+region = Rect2(128, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kax60"]
+atlas = ExtResource("3_xixed")
+region = Rect2(256, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qes8"]
+atlas = ExtResource("3_xixed")
+region = Rect2(384, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ovyb"]
+atlas = ExtResource("3_xixed")
+region = Rect2(512, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3i5d"]
+atlas = ExtResource("3_xixed")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j1b6"]
+atlas = ExtResource("3_xixed")
+region = Rect2(128, 192, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h3se"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pog6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj6af")
+}],
+"loop": true,
+"name": &"idle-closed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xpa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebvmc")
+}],
+"loop": true,
+"name": &"idle-open",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkd68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1emh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4rco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekw4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87j8x")
+}],
+"loop": true,
+"name": &"ship-closed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scevv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvh43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kax60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qes8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ovyb")
+}],
+"loop": true,
+"name": &"ship-open",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3i5d")
+}],
+"loop": true,
+"name": &"thrust-closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j1b6")
+}],
+"loop": true,
+"name": &"thrust-open",
+"speed": 5.0
+}]
+
+[node name="Cargo-Ship" type="Area2D"]
+script = ExtResource("1_tgwql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_qxih8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3h3se")
+animation = &"ship-open"
