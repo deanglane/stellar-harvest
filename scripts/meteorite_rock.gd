@@ -32,7 +32,6 @@ func _ready():
 	sprite_2d.region_rect = Rect2(sprite_x * sprite_width, sprite_y * sprite_height, sprite_width, sprite_height)
 	
 	spawned_rock = {meteorite_dict.keys()[random_num]:meteorite_dict[meteorite_arr[random_num]]}
-	#print(spawned_rock)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y += speed * delta

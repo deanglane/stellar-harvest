@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx04iyqud6gm2"
+path="res://.godot/imported/collect-meteorite .wav-9965117b723e7b49b4057189add82f5e.sample"
+
+[deps]
+
+source_file="res://assets/music-sfx/01-sfx/collect-meteorite .wav"
+dest_files=["res://.godot/imported/collect-meteorite .wav-9965117b723e7b49b4057189add82f5e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

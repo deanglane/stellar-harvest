@@ -3,11 +3,9 @@ extends Area2D
 #@onready var meteorite_rock: Area2D = $"../Meteorite-rock"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-
 const SPEED: float = 350.0
 var speed2: float = SPEED
-var is_cargo_open: bool = false
-var next_animation = ""  # To store the queued animation
+var is_cargo_open: bool = false # Stretch goal for sprite animation Cargo doors
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	# returns the direction as either (-1,0,1)
 	var direction = Input.get_axis("left", "right")
 	
 	# Movement inputs left
@@ -33,7 +32,7 @@ func _process(delta: float) -> void:
 		# cargo sprite directions
 		animated_sprite_2d.flip_h = true
 		# stopping cargo from going off the screen
-		
+	
 	if is_cargo_open == false:
 		if direction == 0:
 			animated_sprite_2d.play("idle-closed") # closed cargo idle
